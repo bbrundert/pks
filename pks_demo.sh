@@ -11,7 +11,7 @@
 ########################
 # include the magic
 ########################
-. ./../demo-magic/demo-magic.sh
+. ./demo-magic/demo-magic.sh
 
 # hide the evidence
 clear
