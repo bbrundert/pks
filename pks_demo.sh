@@ -12,6 +12,8 @@
 # include the magic
 ########################
 . ./demo-magic/demo-magic.sh
+TYPE_SPEED=15
+DEMO_PROMPT='\A \u@\h \W \! >' 
 
 # hide the evidence
 clear
@@ -25,6 +27,8 @@ pe "bosh -e kubobosh deployments"
 pe "bosh -e kubobosh deployments | grep service-instance_*"
 SERVICEINSTANCE=$(bosh -e kubobosh deployments | grep service-instance_* | awk '{print $1}')
 pe "bosh -e kubobosh -d $SERVICEINSTANCE instances"
-
+p "Additional Troubleshooting Commands"
+p "bosh -e kubobosh -d $SERVICEINSTANCE ssh worker/87333ba4-3473-4959-8f53-a35282f5f7df"
+p "bosh -e kubobosh -d $SERVICEINSTANCE logs"
 
 #test
