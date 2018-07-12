@@ -12,3 +12,5 @@ clear
 pe "pks login -a pks.corp.local -u admin -p MXoIThjoSxm2NBVNOh_AjKm5lgvzQH6l -k"
 pe "pks clusters"
 pe "pks cluster my-cluster"
+
+#test
