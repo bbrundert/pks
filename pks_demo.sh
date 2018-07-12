@@ -13,7 +13,7 @@
 ########################
 . ./demo-magic/demo-magic.sh
 TYPE_SPEED=15
-DEMO_PROMPT='\A \u@\h \W \! >' 
+DEMO_PROMPT='\t \u@\h \W >' 
 
 # hide the evidence
 clear
