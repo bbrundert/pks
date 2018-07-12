@@ -11,7 +11,7 @@
 ########################
 # include the magic
 ########################
-. demo-magic.sh
+. ./../demo-magic/demo-magic.sh
 
 # hide the evidence
 clear
@@ -22,8 +22,9 @@ pe "pks clusters"
 pe "pks cluster my-cluster"
 p "pks create-cluster my-kube -e 10.40.14.34 -n 1"
 pe "bosh -e kubobosh deployments"
-pe "bosh -e kubobosh deployments | grep service-instance_* | awk '{print $1}'"
+pe "bosh -e kubobosh deployments | grep service-instance_*"
 SERVICEINSTANCE=$(bosh -e kubobosh deployments | grep service-instance_* | awk '{print $1}')
 pe "bosh -e kubobosh -d $SERVICEINSTANCE instances"
+
 
 #test
