@@ -28,6 +28,25 @@ NETWORK_MANAGER_PASSWORD=$NSX_COMMON_PASSWORD
 
 NODE_ID=$(cat /proc/sys/kernel/random/uuid)
 
+cat << EOF > nsx-cert.cnf
+[ req ]
+default_bits = 2048
+distinguished_name = req_distinguished_name
+req_extensions = req_ext
+prompt = no
+[ req_distinguished_name ]
+countryName = US
+stateOrProvinceName = California
+localityName = CA
+organizationName = NSX
+commonName = ###NSX_CN### 
+[ req_ext ]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = ###NSX_CN### 
+EOF
+
+
 # This function returns id from rest response
 function get_response_id() {
   echo ${1} | jq '.results[] | .id ' | tr -d '""' 
