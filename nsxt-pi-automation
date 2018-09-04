@@ -5,7 +5,6 @@
 #to be customized
 export PASSWORD="VMware1!"
 export ADMIN="admin"
-export DOMAIN="cpod-lab.shwrfr.mooo.com"
 export NSX_MANAGER_IP="1.2.3.4"
 export NSX_COMMON_DOMAIN="nsx.my.fqdn"
 export NSX_COMMON_PASSWORD="${PASSWORD}"
@@ -20,6 +19,7 @@ NETWORK_MANAGER_PASSWORD=$NSX_COMMON_PASSWORD
 NODE_ID=$(cat /proc/sys/kernel/random/uuid)
 
 #unused and removed
+#export DOMAIN="cpod-lab.shwrfr.mooo.com"
 #export NSX_IP_BASE="172.18.13"
 #export NSX_MANAGER_IP="${NSX_IP_BASE}.4"
 #export NSX_CONTROLLER_IP="${NSX_IP_BASE}.5"
